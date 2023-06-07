@@ -1,2 +1,188 @@
   [1m[35m (271.6ms)[0m  [1m[35mCREATE DATABASE "RoutesAndControllers_development" ENCODING = 'unicode'[0m
   [1m[35m (187.6ms)[0m  [1m[35mCREATE DATABASE "RoutesAndControllers_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2023-06-07 16:49:34 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jason/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jason/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 4.2ms | Allocations: 527)
+Completed 200 OK in 24ms (Views: 10.2ms | ActiveRecord: 0.0ms | Allocations: 4549)
+
+
+Started GET "/users" for ::1 at 2023-06-07 16:58:27 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users" for ::1 at 2023-06-07 16:59:48 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users" for ::1 at 2023-06-07 16:59:49 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/user" for ::1 at 2023-06-07 17:00:08 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for ::1 at 2023-06-07 17:00:16 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users/" for ::1 at 2023-06-07 17:00:50 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users/" for ::1 at 2023-06-07 17:01:30 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/use" for ::1 at 2023-06-07 17:01:34 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/use"):
+  
+Started GET "/users" for ::1 at 2023-06-07 17:01:39 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users" for ::1 at 2023-06-07 17:02:12 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users" for ::1 at 2023-06-07 17:02:13 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users" for ::1 at 2023-06-07 17:02:24 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users" for ::1 at 2023-06-07 17:02:25 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE DATABASE "RoutesAndControllers_development" ENCODING = 'unicode'[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE DATABASE "RoutesAndControllers_test" ENCODING = 'unicode'[0m
+Started GET "/" for ::1 at 2023-06-07 17:07:05 -0400
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /home/jason/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /home/jason/.rbenv/versions/3.1.1/lib/ruby/gems/3.1.0/gems/railties-7.0.5/lib/rails/templates/rails/welcome/index.html.erb (Duration: 2.4ms | Allocations: 527)
+Completed 200 OK in 18ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 4549)
+
+
+Started GET "/users" for ::1 at 2023-06-07 17:07:09 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/user" for ::1 at 2023-06-07 17:07:47 -0400
+  
+ActionController::RoutingError (No route matches [GET] "/user"):
+  
+Started GET "/users" for ::1 at 2023-06-07 17:08:03 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users/__better)errors" for ::1 at 2023-06-07 17:08:18 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users/__better_errors" for ::1 at 2023-06-07 17:08:24 -0400
+Started GET "/users/__better_errors" for ::1 at 2023-06-07 17:08:28 -0400
+Started PUT "/users/__better_errors" for ::1 at 2023-06-07 17:08:35 -0400
+Started PUT "/users/" for ::1 at 2023-06-07 17:08:46 -0400
+  
+ActionController::RoutingError (No route matches [PUT] "/users"):
+  
+Started GET "/users/" for ::1 at 2023-06-07 17:08:57 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users/" for ::1 at 2023-06-07 17:09:41 -0400
+
+ActionController::RoutingError - uninitialized constant UsersController
+      Object.const_get(camel_cased_word)
+            ^^^^^^^^^^
+Did you mean?  UserController
+            raise MissingController.new(error.message, error.name)
+            ^^^^^:
+
+Started GET "/users/" for ::1 at 2023-06-07 17:10:01 -0400
+Processing by UsersController#index as */*
+  Rendering text template
+  Rendered text template (Duration: 0.1ms | Allocations: 9)
+Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.0ms | Allocations: 578)
+
+

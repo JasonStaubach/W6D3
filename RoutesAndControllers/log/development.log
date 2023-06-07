@@ -186,3 +186,117 @@ Processing by UsersController#index as */*
 Completed 200 OK in 44ms (Views: 43.7ms | ActiveRecord: 0.0ms | Allocations: 578)
 
 
+Started GET "/users/users?fav_food=pizza" for ::1 at 2023-06-07 17:17:28 -0400
+
+AbstractController::ActionNotFound - The action 'show' could not be found for UsersController:
+
+Started GET "/users/users?fav_food=pizza" for ::1 at 2023-06-07 17:18:17 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav_food"=>"pizza", "id"=>"users"}
+  Rendering text template
+  Rendered text template (Duration: 0.4ms | Allocations: 13)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.0ms | Allocations: 1379)
+
+
+Started POST "/users/users" for ::1 at 2023-06-07 17:19:21 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/users"):
+  
+Started POST "/users/users" for ::1 at 2023-06-07 17:20:00 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/users"):
+  
+Started POST "/users" for ::1 at 2023-06-07 17:20:07 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav food"=>"pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 8)
+Completed 200 OK in 2ms (Views: 1.7ms | ActiveRecord: 0.0ms | Allocations: 453)
+
+
+Started POST "/users" for ::1 at 2023-06-07 17:20:25 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav food"=>"not pizza"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 5)
+Completed 200 OK in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms | Allocations: 161)
+
+
+Started POST "/users" for ::1 at 2023-06-07 17:21:12 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav food"=>"not pizza"}
+Completed 200 OK in 1ms (Views: 0.5ms | ActiveRecord: 0.0ms | Allocations: 253)
+
+
+Started GET "/users/2" for ::1 at 2023-06-07 17:27:28 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav food"=>"not pizza", "id"=>"2"}
+  Rendering text template
+  Rendered text template (Duration: 0.0ms | Allocations: 7)
+Completed 200 OK in 2ms (Views: 1.8ms | Allocations: 437)
+
+
+Started GET "/users/2" for ::1 at 2023-06-07 17:31:35 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav food"=>"not pizza", "id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 211)
+
+
+Started GET "/users/2" for ::1 at 2023-06-07 17:31:44 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"2"}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 106)
+
+
+Started POST "/users/2" for ::1 at 2023-06-07 17:37:18 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started POST "/users/2" for ::1 at 2023-06-07 17:37:37 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/2"):
+  
+Started PATCH "/users/2" for ::1 at 2023-06-07 17:37:52 -0400
+
+AbstractController::ActionNotFound - The action 'update' could not be found for UsersController:
+
+Started POST "/users/3" for ::1 at 2023-06-07 17:37:59 -0400
+  
+ActionController::RoutingError (No route matches [POST] "/users/3"):
+  
+Started GET "/users/3" for ::1 at 2023-06-07 17:38:22 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav food"=>"not pizza", "id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 115)
+
+
+Started GET "/users/3" for ::1 at 2023-06-07 17:38:36 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav food"=>"not pizza", "other foods"=>"pepperoni", "id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 124)
+
+
+Started GET "/users/3" for ::1 at 2023-06-07 17:39:46 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav food"=>"not pizza", "users"=>{"other foods"=>"pepperoni"}, "id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.6ms | Allocations: 132)
+
+
+Started GET "/users/3" for ::1 at 2023-06-07 17:40:25 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav food"=>"not pizza", "other foods"=>{"food 1"=>"pineapple", "food 2"=>"pepperoni"}, "id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.3ms | Allocations: 140)
+
+
+Started GET "/users/3" for ::1 at 2023-06-07 17:40:54 -0400
+Processing by UsersController#show as */*
+  Parameters: {"fav food"=>"not pizza", "other foods"=>{"food 1"=>"pineapple", "food 2"=>{"haha"=>"pepperoni", "bob"=>"bob"}}, "id"=>"3"}
+Completed 200 OK in 1ms (Views: 0.6ms | Allocations: 156)
+
+
+Started POST "/users/" for ::1 at 2023-06-07 17:41:12 -0400
+Processing by UsersController#create as */*
+  Parameters: {"fav food"=>"not pizza", "other foods"=>{"food 1"=>"pineapple", "food 2"=>{"haha"=>"pepperoni", "bob"=>"bob"}}}
+Completed 200 OK in 1ms (Views: 0.4ms | Allocations: 148)
+
+

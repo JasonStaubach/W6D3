@@ -6,12 +6,38 @@ class UsersController < ApplicationController
 
     def show
 
-        render json: params
+        user = User.find(params[:id])
+        render json: user
     end
 
     def create
         user = User.new(params.require(:user).permit(:name, :email))
-        user.save!
+        if user.save
+            render json: user
+        else  
+            render json: user.errors.full_messages, status: :unprocessible_entity
+        end
+    end
+
+    def update
+        user = User.find(params[:id])
+        if user.update(user_parameter)
+            render json: user
+        else
+            render json: user.errors.full_messages, status: :unprocessible_entity
+        end
+    end
+
+    def destroy
+        user = User.find(params[:id])
+
+        user.delete
+
         render json: user
+    end
+
+    protected
+    def user_parameter
+        params.require(:user).permit(:name, :email)
     end
 end

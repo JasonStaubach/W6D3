@@ -563,3 +563,321 @@ Processing by UsersController#create as */*
 Completed 200 OK in 13ms (Views: 0.6ms | ActiveRecord: 3.8ms | Allocations: 2179)
 
 
+Started POST "/users/" for ::1 at 2023-06-08 09:58:36 -0400
+  [1m[36mActiveRecord::SchemaMigration Pluck (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"email"=>"joe@email.com"}}
+Completed 500 Internal Server Error in 28ms (ActiveRecord: 6.0ms | Allocations: 8825)
+
+
+
+ArgumentError - Unrecognized status code :unprocessible_entity:
+  app/controllers/users_controller.rb:17:in `create'
+
+Started POST "/users/" for ::1 at 2023-06-08 09:58:44 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"joe", "email"=>"joe@email.com"}}
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (2.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "joe"], ["email", "joe@email.com"], ["created_at", "2023-06-08 13:58:44.949897"], ["updated_at", "2023-06-08 13:58:44.949897"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 29ms (Views: 1.1ms | ActiveRecord: 15.4ms | Allocations: 3660)
+
+
+Started POST "/users/" for ::1 at 2023-06-08 09:58:59 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"eli", "email"=>"eli@goat.com"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mUser Create (0.6ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "eli"], ["email", "eli@goat.com"], ["created_at", "2023-06-08 13:58:59.698248"], ["updated_at", "2023-06-08 13:58:59.698248"]]
+  ↳ app/controllers/users_controller.rb:14:in `create'
+  [1m[36mTRANSACTION (42.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:14:in `create'
+Completed 200 OK in 53ms (Views: 0.6ms | ActiveRecord: 43.3ms | Allocations: 1982)
+
+
+Started GET "/users/43" for ::1 at 2023-06-08 09:59:59 -0400
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"eli", "email"=>"eli@goat.com"}, "id"=>"43"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 404 Not Found in 22ms (ActiveRecord: 6.1ms | Allocations: 5784)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=id:
+  app/controllers/users_controller.rb:9:in `show'
+
+Started GET "/users/43" for ::1 at 2023-06-08 10:00:10 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", nil], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 404 Not Found in 4ms (ActiveRecord: 0.6ms | Allocations: 1666)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=id:
+  app/controllers/users_controller.rb:9:in `show'
+
+Started GET "/users/43" for ::1 at 2023-06-08 10:01:02 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 19ms (Views: 1.0ms | ActiveRecord: 5.6ms | Allocations: 4077)
+
+
+Started GET "/users/44" for ::1 at 2023-06-08 10:01:07 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"44"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 1.1ms | ActiveRecord: 0.5ms | Allocations: 655)
+
+
+Started GET "/users/45" for ::1 at 2023-06-08 10:01:11 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"45"}
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 45], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.7ms | ActiveRecord: 0.5ms | Allocations: 637)
+
+
+Started GET "/users/3" for ::1 at 2023-06-08 10:01:15 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 5ms (Views: 0.8ms | ActiveRecord: 0.7ms | Allocations: 636)
+
+
+Started GET "/users/43" for ::1 at 2023-06-08 10:08:36 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting `end':
+  app/controllers/users_controller.rb:28:in `'
+
+Started GET "/users/43" for ::1 at 2023-06-08 10:08:46 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"43"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 43], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 16ms (Views: 0.5ms | ActiveRecord: 4.5ms | Allocations: 6789)
+
+
+Started GET "/users/44" for ::1 at 2023-06-08 10:08:51 -0400
+Processing by UsersController#show as */*
+  Parameters: {"id"=>"44"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 2ms (Views: 0.6ms | ActiveRecord: 0.3ms | Allocations: 638)
+
+
+Started PATCH "/users/44" for ::1 at 2023-06-08 10:09:32 -0400
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"44"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.3ms | Allocations: 3848)
+
+
+
+NameError - undefined local variable or method `user_params' for #<UsersController:0x00000000008408>
+        if user.update(user_params)
+                       ^^^^^^^^^^^
+Did you mean?  user_path:
+  app/controllers/users_controller.rb:24:in `update'
+
+Started PATCH "/users/44" for ::1 at 2023-06-08 10:09:58 -0400
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"44"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 44], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Update (1.0ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "amanda"], ["email", "amanda@snailmail.com"], ["updated_at", "2023-06-08 14:09:59.036129"], ["id", 44]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (1.3ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+Completed 200 OK in 19ms (Views: 0.5ms | ActiveRecord: 6.4ms | Allocations: 6199)
+
+
+Started DELETE "/users/4" for ::1 at 2023-06-08 10:11:49 -0400
+
+SyntaxError - syntax error, unexpected end-of-input, expecting `end':
+  app/controllers/users_controller.rb:37:in `'
+
+Started GET "/users/4" for ::1 at 2023-06-08 10:11:59 -0400
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 2.7ms | Allocations: 4084)
+
+
+Started GET "/users/1" for ::1 at 2023-06-08 10:12:05 -0400
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 0.4ms | ActiveRecord: 0.3ms | Allocations: 637)
+
+
+Started GET "/users/4" for ::1 at 2023-06-08 10:12:09 -0400
+Processing by UsersController#show as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:9:in `show'
+Completed 200 OK in 3ms (Views: 0.5ms | ActiveRecord: 0.2ms | Allocations: 636)
+
+
+Started DELETE "/users/4" for ::1 at 2023-06-08 10:12:14 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+Completed 500 Internal Server Error in 8ms (ActiveRecord: 0.4ms | Allocations: 3717)
+
+
+
+NameError - undefined local variable or method `null' for #<UsersController:0x0000000000aa78>
+        user = null
+               ^^^^:
+  app/controllers/users_controller.rb:34:in `destroy'
+
+Started DELETE "/users/4" for ::1 at 2023-06-08 10:12:37 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+  [1m[36mUser Destroy (1.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 4]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 200 OK in 13ms (Views: 0.5ms | ActiveRecord: 4.9ms | Allocations: 4484)
+
+
+Started DELETE "/users/4" for ::1 at 2023-06-08 10:12:39 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.3ms | Allocations: 1050)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=4:
+  app/controllers/users_controller.rb:32:in `destroy'
+
+Started DELETE "/users/" for ::1 at 2023-06-08 10:12:45 -0400
+  
+ActionController::RoutingError (No route matches [DELETE] "/users"):
+  
+Started GET "/users/" for ::1 at 2023-06-08 10:12:50 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.6ms | Allocations: 1950)
+
+
+Started DELETE "/users/5" for ::1 at 2023-06-08 10:13:07 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+  [1m[36mUser Destroy (2.0ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 5]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 200 OK in 7ms (Views: 0.7ms | ActiveRecord: 2.4ms | Allocations: 1082)
+
+
+Started DELETE "/users/6" for ::1 at 2023-06-08 10:13:12 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+  [1m[36mUser Destroy (12.7ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 6]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 200 OK in 16ms (Views: 0.4ms | ActiveRecord: 13.1ms | Allocations: 1032)
+
+
+Started DELETE "/users/6" for ::1 at 2023-06-08 10:13:13 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}, "id"=>"6"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.3ms | Allocations: 1040)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=6:
+  app/controllers/users_controller.rb:32:in `destroy'
+
+Started GET "/users/" for ::1 at 2023-06-08 10:13:17 -0400
+Processing by UsersController#index as */*
+  Parameters: {"user"=>{"name"=>"amanda", "email"=>"amanda@snailmail.com"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/controllers/users_controller.rb:4:in `index'
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 1592)
+
+
+Started POST "/users/" for ::1 at 2023-06-08 10:15:02 -0400
+Processing by UsersController#create as */*
+  Parameters: {"user"=>{"name"=>"fucker", "email"=>"imafuckwit"}}
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "email", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "fucker"], ["email", "imafuckwit"], ["created_at", "2023-06-08 14:15:02.361327"], ["updated_at", "2023-06-08 14:15:02.361327"]]
+  ↳ app/controllers/users_controller.rb:15:in `create'
+  [1m[36mTRANSACTION (12.0ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:15:in `create'
+Completed 200 OK in 24ms (Views: 0.4ms | ActiveRecord: 15.1ms | Allocations: 4641)
+
+
+Started PATCH "/users/6" for ::1 at 2023-06-08 10:15:21 -0400
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"piglet", "email"=>"imapiglet"}, "id"=>"6"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+Completed 404 Not Found in 3ms (ActiveRecord: 0.4ms | Allocations: 1994)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=6:
+  app/controllers/users_controller.rb:23:in `update'
+
+Started PATCH "/users/46" for ::1 at 2023-06-08 10:15:26 -0400
+Processing by UsersController#update as */*
+  Parameters: {"user"=>{"name"=>"piglet", "email"=>"imapiglet"}, "id"=>"46"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:23:in `update'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mUser Update (0.5ms)[0m  [1m[33mUPDATE "users" SET "name" = $1, "email" = $2, "updated_at" = $3 WHERE "users"."id" = $4[0m  [["name", "piglet"], ["email", "imapiglet"], ["updated_at", "2023-06-08 14:15:26.135177"], ["id", 46]]
+  ↳ app/controllers/users_controller.rb:24:in `update'
+  [1m[36mTRANSACTION (12.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:24:in `update'
+Completed 200 OK in 21ms (Views: 0.4ms | ActiveRecord: 13.9ms | Allocations: 2520)
+
+
+Started DELETE "/users/46" for ::1 at 2023-06-08 10:15:31 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"piglet", "email"=>"imapiglet"}, "id"=>"46"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+  [1m[36mUser Destroy (1.8ms)[0m  [1m[31mDELETE FROM "users" WHERE "users"."id" = $1[0m  [["id", 46]]
+  ↳ app/controllers/users_controller.rb:34:in `destroy'
+Completed 200 OK in 5ms (Views: 0.4ms | ActiveRecord: 2.0ms | Allocations: 1042)
+
+
+Started DELETE "/users/46" for ::1 at 2023-06-08 10:15:33 -0400
+Processing by UsersController#destroy as */*
+  Parameters: {"user"=>{"name"=>"piglet", "email"=>"imapiglet"}, "id"=>"46"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 46], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:32:in `destroy'
+Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1033)
+
+
+
+ActiveRecord::RecordNotFound - Couldn't find User with 'id'=46:
+  app/controllers/users_controller.rb:32:in `destroy'
+
